@@ -20,6 +20,11 @@ void traverse(node* pNode){
     }
     
 }
+//öne ekleme
+void push(node* root, node* pNode){
+    pNode->next = root;
+
+}
 
 //ekleme
 void append(node* root, node* pNode){
@@ -45,22 +50,23 @@ node* createNode(char* name, int number){
 
 
 
+
 int main(){
     
     node* a = createNode("Sev",1);
     node* b = createNode("Sevgi",2);
     node* c = createNode("Sevgili",3);
     node* d = createNode("Sevilmek",4);
-
+    node* e = createNode("Saymak",5);
    
 
     append(a, b);
     append(a, c);
     append(a, d);
+    push(a,e);
 
 
-
-    traverse(a);
+    traverse(e);
 
     return 0;
 }
